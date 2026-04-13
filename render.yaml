@@ -1,0 +1,21 @@
+services:
+  - type: worker
+    name: anonx-music-bot
+    runtime: python
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: MONGO_DB_URI
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: STRING_SESSION
+        sync: false
+      - key: LOGGER_ID
+        sync: false
+    buildCommand: pip install -U pip && pip install -r requirements.txt
+    startCommand: python3 -m AnonXMusic
