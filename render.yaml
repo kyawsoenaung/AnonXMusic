@@ -1,7 +1,8 @@
 services:
   - type: worker
     name: anonx-music-bot
-    runtime: python
+    runtime: docker # ဒီမှာ docker လို့ ရေးထားရင် လုံလောက်ပါပြီ
+    plan: free
     envVars:
       - key: API_ID
         sync: false
@@ -17,5 +18,3 @@ services:
         sync: false
       - key: LOGGER_ID
         sync: false
-    buildCommand: pip install -U pip && pip install -r requirements.txt
-    startCommand: python3 -m AnonXMusic
